@@ -1,4 +1,4 @@
-# Question Four Restaurant
+# Question Two Cron job
 
 # How to start
 
@@ -6,5 +6,5 @@
 > docker build -t question-two . && docker compose up
 
 
-## And then.. Wait for you pizza!
+* Connect to the DB to see the files!
 
