@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  db:  
+    image: postgres:alpine3.16
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=question_two
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/create_tables.sql
+    ports:
+      - 5432:5432
+  app:
+    image: question-two
+    depends_on:
+      - db
+    links:
+      - db
+
+

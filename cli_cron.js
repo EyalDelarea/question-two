@@ -9,9 +9,9 @@ const urlNode = async (url) => {
   const binaryData = await content.blob();
   const fileName = url.substring(url.lastIndexOf("/") + 1);
   return {
-    url: url,
-    file_name: fileName,
-    binary_data: binaryData,
+    "url": url,
+    "file_name": fileName,
+    "binary_data": binaryData,
   };
 };
 
@@ -32,7 +32,6 @@ async function recursiveTraverse(object) {
 async function fetchUrls() {
   const res = await fetch(API_ENDPOINT);
   const json = await res.json();
-  console.log(json);
   for (const key of json) {
     if (key instanceof Object) {
       recursiveTraverse(key);
